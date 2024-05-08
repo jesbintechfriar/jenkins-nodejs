@@ -37,8 +37,8 @@ pipeline {
         }
         stage('Five') {
             steps {
-                yarn install
-                yarn run server
+                sh 'yarn install'
+                sh 'yarn run server'
             }
         }
     }
