@@ -29,16 +29,16 @@ pipeline {
                     }
                 }
                 stage('Integration Test') {
-                    agent {
-                        docker {
-                            reuseNode false
-                            image 'ubuntu'
-                        }
-                    }
                     steps {
-                        echo 'Running the integration test....'
+                        echo 'Running the unit test....'
                     }
                 }
+            }
+        }
+        stage('Five') {
+            steps {
+                yarn install
+                yarn run server
             }
         }
     }
