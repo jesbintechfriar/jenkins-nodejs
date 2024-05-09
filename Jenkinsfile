@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh 'pwd'
+               sh 'cd /var/www/nodeapp'
+               sh 'pm2 stop server.js'
             }
         }
     }
