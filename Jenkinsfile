@@ -15,7 +15,8 @@ pipeline {
         stage('Deploy') {
             steps {
                sh 'cd /var/www/nodeapp'
-               sh 'pm2 restart all'
+               sh '/node_modules/.bin/pm2 stop server.js'
+               sh '/node_modules/.bin/pm2 start server.js'
             }
         }
     }
