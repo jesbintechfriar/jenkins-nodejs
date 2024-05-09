@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build is running...'
-                sh 'yarn install'
+                sh 'npm install'
                 sh 'cp -r . * /var/www/nodeapp'
             }
         }
