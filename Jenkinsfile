@@ -15,8 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                sh 'cd /var/www/nodeapp'
-               sh 'pm2 stop ecosystem.config.js'
-               sh 'pm2 start ecosystem.config.js'
+               sh 'pm2 restart all'
             }
         }
     }
