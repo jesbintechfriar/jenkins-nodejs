@@ -1,1 +1,15 @@
-console.log('Server started');
+import express from "express";
+
+const app = express();
+
+const port = 3000;
+
+const hostname = "localhost";
+
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
+app.listen(port, hostname, () => {
+  console.log(`Server is running at http://${hostname}:${port}/`);
+});
