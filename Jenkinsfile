@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build is running...'
-                sh 'cp -r * /var/www/nodeapp'
+                sh 'cp -r . * /var/www/nodeapp'
             }
         }
         stage('Test') {
