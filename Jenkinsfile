@@ -1,30 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('One') {
+        stage('Build') {
             steps {
-                echo 'Build is running.'
-            }
-        }
-        stage('Two') {
-            steps {
-                input('Do you want to proceed?')
-            }
-        }
-        stage('Three') {
-            when {
-                not {
-                    branch 'master'
-                }
-            }
-            steps {
-                echo 'Hello'
-            }
-        }
-        stage('Four') {
-            steps {
+                echo 'Build is running...'
                 sh 'yarn install'
                 sh 'node server.js'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test is running...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deployment is running....'
             }
         }
     }
