@@ -7,7 +7,7 @@ const port = 3000;
 const hostname = "localhost";
 
 app.get("/", (req, res) => {
-  res.send("Server is running...");
+  res.send("Server is running code updated...");
 });
 
 app.listen(port, hostname, () => {
