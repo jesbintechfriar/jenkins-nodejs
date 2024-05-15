@@ -15,6 +15,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'cd /var/www/nodeapp'
+                sh 'pm2 resurrect'
+                sh 'pm2 update'
                 sh 'pm2 restart all'
             }
         }
