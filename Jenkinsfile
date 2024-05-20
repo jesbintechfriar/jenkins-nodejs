@@ -16,7 +16,6 @@ pipeline {
             steps {
                 sh 'cd /var/www/nodeapp'
                 sh 'pm2 start server.js -- prod'
-                sh 'pm2 startup'
                 sh 'pm2 save'
                 sh 'service nginx start'
             }
