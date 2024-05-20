@@ -15,10 +15,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'cd /var/www/nodeapp'
-                sh 'sudo pm2 start server.js -- prod'
-                sh 'sudo pm2 startup'
-                sh 'sudo pm2 save'
-                sh 'sudo service nginx start'
+                sh 'pm2 start server.js -- prod'
+                sh 'pm2 startup'
+                sh 'pm2 save'
+                sh 'service nginx start'
             }
         }
     }
